@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CompanyServiceApplication {
 	private static Logger logger = LoggerFactory.getLogger(CompanyServiceApplication.class);
-
+//=======main======
 	public static void main(String[] args)
 	{
 		logger.info("welcome to company");
