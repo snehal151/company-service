@@ -1,5 +1,7 @@
 package com.services.company.companyservice;
 
+
+//POJO CLASS
 public class Company {
 
     int id;

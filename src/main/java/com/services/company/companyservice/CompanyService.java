@@ -6,15 +6,17 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+
 @Service
 public class CompanyService {
 
     List<Company> database = new ArrayList<>();
 
-    public void saveCompany(Company newCompany) {
+    public Company saveCompany(Company newCompany) {
         int newId = database.size() + 1;
         newCompany.setId(newId);
         database.add(newCompany);
+        return newCompany;
     }
 
     public Company getCompany(int id) {
@@ -25,6 +27,6 @@ public class CompanyService {
                 return tCompany;
             }
         }
-        throw new RuntimeException("Company with id " + id + " Not found");
+        return null;
     }
 }
