@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class CompanyController {
     private static Logger logger = LoggerFactory.getLogger(CompanyController.class);
@@ -14,7 +16,7 @@ public class CompanyController {
     @Autowired
     CompanyService companyService;
 
-    @PostMapping
+     @PostMapping
     public ResponseEntity postCompany(@RequestBody Company company) {
         logger.info("postCompany: start");
         Company savedCompany = companyService.saveCompany(company);
@@ -36,4 +38,11 @@ public class CompanyController {
         }
     }
 
+    @GetMapping("")
+    public ResponseEntity<List<Company>> getAll(){
+         List<Company> allCompany =companyService.getAllComapny();
+         return new ResponseEntity<>(allCompany,HttpStatus.OK);
+    }
+
 }
+

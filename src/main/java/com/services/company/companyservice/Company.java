@@ -1,9 +1,13 @@
 package com.services.company.companyservice;
 
 
-//POJO CLASS
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Company {
 
+    @Id
     int id;
     String name;
     String phone;
